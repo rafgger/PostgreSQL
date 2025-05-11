@@ -40,6 +40,8 @@ app.post("/add", async (req, res) => {
     const result = await db.query("SELECT country_code FROM countries WHERE country_name = $1", [input]);
 
     const countryCode = result.rows[0].country_code;
+    console.log(countryCode);
+    
 
     // Check if the country is already in the visited_countries table
     try {
